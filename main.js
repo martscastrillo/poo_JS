@@ -22,14 +22,14 @@ Student.prototype.aprobarCurso = function (nuevoCursito) {
   this.cursosAprobados.push(nuevoCursito);
 }
 
-const juanita = new Student(
+/* const juanita = new Student(
   "Juanita Alejandra",
   15,
   [
     "Curso de Introducción a la Producción de Videojuegos",
     "Curso de Creación de Personajes",
   ],
-);
+); */
 
 // Prototipos con la sintaxis de clases
 //PATRÓN “RORO” - “Receive an object, return an object” 
@@ -51,21 +51,58 @@ class Student2 {
   }
 }
 
-const miguelito = new Student2({
+/* const miguelito = new Student2({
   name: "Miguel",
   age: 28,
   email: "miguelito@platzi.com",
-});
+}); */
+function videoPlay(id) {
+  const urlSecreta = "https://platziultrasecretomasquelanasa.com/" + id;
+  console.log("Se está reproduciendo desde la url " + urlSecreta);
+}
+function videoStop(id) {
+  const urlSecreta = "https://platziultrasecretomasquelanasa.com/" + id;
+  console.log("Pausamos la url " + urlSecreta);
+}
+
+export class PlatziClass {
+  constructor({
+    name,
+    videoID,
+  }) {
+    this.name = name;
+    this.videoID = videoID;
+  }
+
+  reproducir() {
+    videoPlay(this.videoID);
+  }
+  pausar() {
+    videoStop(this.videoID);
+  }
+}
+
 class Course {
   constructor({
     name,
     classes = [],
   }) {
-    this.name = name;
+    this._name = name;
     this.classes = classes;
   }
+// getter
+  get name() {
+    return this._name;
+  }
+// setter
+  set name(nuevoNombrecito) {
+    if (nuevoNombrecito === "Curso Malito de Programación Básica") {
+      console.error("Web... no");
+    } else {
+      this._name = nuevoNombrecito; 
+    }
+  }
 }
-
 const cursoProgBasica = new Course({
   name: "Curso Gratis de Programación Básica",
 });
@@ -75,6 +112,7 @@ const cursoDefinitivoHTML = new Course({
 const cursoPracticoHTML = new Course({
   name: "Curso Practico de HTML y CSS",
 });
+
 
 class LearningPath {
   constructor({
@@ -137,7 +175,7 @@ class Student3 {
   }
 }
 
-const juan2 = new Student3({
+/* const juan2 = new Student3({
   name: "JuanDC",
   username: "juandc",
   email: "juanito@juanito.com",
@@ -157,4 +195,4 @@ const miguelito2 = new Student3({
     escuelaWeb,
     escuelaData,
   ],
-});
+}); */
