@@ -1,14 +1,16 @@
-class Patito {
-	static sonidito = "cuak!";
+const juan = {
+  name: "Juanito",
+  age: 18,
+  approvedCourses: ["Curso 1"],
+  addCourse(newCourse) {
+    console.log("This", this);
+    console.log("This.approvedCourses", this.approvedCourses);
+    this.approvedCourses.push(newCourse);
+  }
+};
 
-	static hacerSonidito() {
-		return "cuak! x2";
-	}
-}
+//console.log(Object.keys(juan));
+// console.log(Object.getOwnPropertyNames(juan));
+// console.log(Object.entries(juan));
 
-// Por fuera de clase Patito, podemos acceder a lo siguiente sin crear alguna instancia:
-// Al atributo `sonidito`
-console.log(Patito.sonidito)
-
-// Al método `hacerSonidito`
-console.log(Patito.hacerSonidito());
+console.log(Object.getOwnPropertyDescriptors(juan));
